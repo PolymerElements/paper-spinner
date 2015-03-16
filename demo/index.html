@@ -1,0 +1,54 @@
+<!doctype html>
+<!--
+  @license
+  Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+  This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+  The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+  The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+  Code distributed by Google as part of the polymer project is also
+  subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Paper Spinner</title>
+  <script src="../../webcomponentsjs/webcomponents.js"></script>
+  <link rel="import" href="../paper-spinner.html">
+  <style>
+
+    paper-spinner.blue .circle { border-color: #4285f4; }
+    paper-spinner.blue::shadow .circle { border-color: #4285f4; }
+
+    paper-spinner.red .circle { border-color: #db4437; }
+    paper-spinner.red::shadow .circle { border-color: #db4437; }
+
+    paper-spinner.yellow .circle { border-color: #f4b400; }
+    paper-spinner.yellow::shadow .circle { border-color: #f4b400; }
+
+    paper-spinner.green .circle { border-color: #0f9d58; }
+    paper-spinner.green::shadow .circle { border-color: #0f9d58; }
+
+  </style>
+</head>
+
+<body>
+  <paper-spinner class="blue" active></paper-spinner>
+  <paper-spinner class="red" active></paper-spinner>
+  <paper-spinner class="yellow" active></paper-spinner>
+  <paper-spinner class="green" active></paper-spinner>
+  <paper-spinner active></paper-spinner>
+  <button>Toggle</button>
+
+  <script>
+    var spinners = document.querySelectorAll('paper-spinner');
+
+    document.querySelector('button').addEventListener('click', function() {
+      Array.prototype.forEach.call(spinners, function(spinner) {
+        spinner.active = !spinner.active;
+      });
+    });
+  </script>
+</body>
+
+</html>
