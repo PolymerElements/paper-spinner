@@ -245,6 +245,8 @@
   border-radius: 50%;
   -webkit-animation: none;
   animation: none;
+
+  mixin(--layout-fit);
 }
 
 .circle-clipper.left .circle {

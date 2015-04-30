@@ -20,7 +20,7 @@
   "ignore": [],
   "dependencies": {
     "polymer": "Polymer/polymer#v0.8.0-rc.7",
-    "paper-styles": "PolymerElements/paper-styles#^0.8.0"
+    "iron-flex-layout": "PolymerElements/iron-flex-layout#^0.8.0"
   },
   "devDependencies": {
     "webcomponentsjs": "webcomponents/webcomponentsjs#^0.6.1",
