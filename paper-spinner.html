@@ -24,7 +24,7 @@ by setting all the layer colors to the same value.
 
 ##### Example
 
-    <style is="x-style">
+    <style is="custom-style">
       paper-spinner .rainbow {
         --paper-spinner-layer-1-color: yellow;
         --paper-spinner-layer-2-color: red;
@@ -54,7 +54,7 @@ in another form (e.g. a text block following the spinner).
 -->
 
 <dom-module id="paper-spinner">
-  <style is="x-style">
+  <style is="custom-style">
   * {
     --paper-spinner-layer-1-color: #4285f4;
     --paper-spinner-layer-2-color: #db4437;
@@ -133,9 +133,6 @@ in another form (e.g. a text block following the spinner).
     Polymer({
 
       is: 'paper-spinner',
-
-      // The custom properties shim is currently an opt-in feature.
-      enableCustomStyleProperties: true,
 
       listeners: {
         'animationend': 'reset',

@@ -246,7 +246,7 @@
   -webkit-animation: none;
   animation: none;
 
-  mixin(--layout-fit);
+  @apply(--layout-fit);
 }
 
 .circle-clipper.left .circle {
