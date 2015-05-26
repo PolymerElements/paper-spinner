@@ -7,10 +7,9 @@
   ],
   "keywords": [
     "web-components",
-    "web-component",
     "polymer",
-    "paper",
-    "spinner"
+    "spinner",
+    "loading"
   ],
   "main": "index.html",
   "private": true,
