@@ -17,7 +17,7 @@
     "type": "git",
     "url": "git://github.com/PolymerElements/paper-spinner"
   },
-  "license": "MIT",
+  "license": "http://polymer.github.io/LICENSE.txt",
   "homepage": "https://github.com/PolymerElements/paper-spinner",
   "ignore": [],
   "dependencies": {
