@@ -11,7 +11,6 @@
     "spinner",
     "loading"
   ],
-  "main": "index.html",
   "private": true,
   "repository": {
     "type": "git",
