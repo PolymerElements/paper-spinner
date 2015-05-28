@@ -15,8 +15,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <!--
 Element providing material design circular spinner.
 
-Example:
-
     <paper-spinner active></paper-spinner>
 
 The default spinner cycles between four layers of colors; by default they are
@@ -30,8 +28,7 @@ it defaults to 'loading'.
 Empty alt can be provided to mark the element as decorative if alternative content is provided
 in another form (e.g. a text block following the spinner).
 
-Example:
-  <paper-spinner alt="Loading contacts list" active></paper-spinner>
+    <paper-spinner alt="Loading contacts list" active></paper-spinner>
 
 ### Styling
 
@@ -136,7 +133,7 @@ Custom property | Description | Default
            * @default false
            */
           active: {
-            observer: 'activeChanged',
+            observer: '_activeChanged',
             type: Boolean,
             value: false
           },
@@ -151,7 +148,7 @@ Custom property | Description | Default
            * @default 'loading'
            */
           alt: {
-            observer: 'altChanged',
+            observer: '_altChanged',
             type: String,
             value: 'loading'
           },
@@ -167,12 +164,12 @@ Custom property | Description | Default
 
           _spinnerContainerClassName: {
             type: String,
-            computed: 'computeSpinnerContainerClassName(active, _coolingDown)'
+            computed: '_computeSpinnerContainerClassName(active, _coolingDown)'
           }
 
         },
 
-        computeSpinnerContainerClassName: function(active, _coolingDown) {
+        _computeSpinnerContainerClassName: function(active, _coolingDown) {
           return classNames({
             active: active || _coolingDown,
             cooldown: _coolingDown
@@ -192,7 +189,7 @@ Custom property | Description | Default
           }
         },
 
-        activeChanged: function() {
+        _activeChanged: function() {
           if (this.active) {
             this.removeAttribute('aria-hidden');
           } else {
@@ -201,7 +198,7 @@ Custom property | Description | Default
           }
         },
 
-        altChanged: function() {
+        _altChanged: function() {
           if (this.alt === '') {
             this.setAttribute('aria-hidden', 'true');
           } else {
