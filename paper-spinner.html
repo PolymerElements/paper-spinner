@@ -161,10 +161,12 @@ Custom property | Description | Default
            * to 0% opacity to the user.
            */
           _coolingDown: {
+            type: Boolean,
             value: false
           },
 
           _spinnerContainerClassName: {
+            type: String,
             computed: 'computeSpinnerContainerClassName(active, _coolingDown)'
           }
 
