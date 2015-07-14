@@ -64,6 +64,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   opacity: 0;
 }
 
+/* Fix for whitespace related render issues */
+.spinner-layer > div {
+  float: left;
+}
+
 .layer-1 {
   border-color: var(--paper-spinner-layer-1-color, --google-blue-500);
 }
