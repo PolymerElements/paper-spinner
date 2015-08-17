@@ -77,7 +77,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 }
 
 .layer-4 {
-  border-color: var(--paper-spinner-layer-4-color, --google-blue-500);
+  border-color: var(--paper-spinner-layer-4-color, --google-green-500);
 }
 
 /**
