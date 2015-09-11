@@ -9,8 +9,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 
 <link rel="import" href="../polymer/polymer.html">
-<link rel="import" href="../paper-styles/color.html">
 <link rel="import" href="../iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../paper-styles/color.html">
+<link rel="import" href="paper-spinner-styles.html">
 
 <!--
 Element providing material design circular spinner.
@@ -48,10 +49,8 @@ Custom property | Description | Default
 -->
 
 <dom-module id="paper-spinner">
-
-  <link rel="import" type="css" href="paper-spinner.css">
-
   <template>
+    <style include="paper-spinner-styles"></style>
 
     <div id="spinnerContainer" class-name="[[_spinnerContainerClassName]]">
       <div class="spinner-layer layer-1">
@@ -94,13 +93,10 @@ Custom property | Description | Default
         </div>
       </div>
     </div>
-
   </template>
 
   <script>
-
     Polymer({
-
       is: 'paper-spinner',
 
       listeners: {
@@ -109,7 +105,6 @@ Custom property | Description | Default
       },
 
       properties: {
-
         /**
          * Displays the spinner.
          *
@@ -152,7 +147,6 @@ Custom property | Description | Default
           type: String,
           computed: '_computeSpinnerContainerClassName(active, _coolingDown)'
         }
-
       },
 
       _computeSpinnerContainerClassName: function(active, coolingDown) {
@@ -192,9 +186,6 @@ Custom property | Description | Default
         this.active = false;
         this._coolingDown = false;
       }
-
     });
-
   </script>
-
 </dom-module>
