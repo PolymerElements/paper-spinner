@@ -160,9 +160,7 @@ Custom property | Description | Default
 
       _activeChanged: function(active, old) {
         this._setAriaHidden(!active);
-        if (!active && old) {
-          this._coolingDown = true;
-        }
+        this._coolingDown = !active && old;
       },
 
       _altChanged: function(alt) {
