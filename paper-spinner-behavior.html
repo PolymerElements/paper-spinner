@@ -16,78 +16,66 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   Polymer.PaperSpinnerBehavior = {
 
     listeners: {
-      'animationend': 'reset',
-      'webkitAnimationEnd': 'reset'
+      'animationend': '__reset',
+      'webkitAnimationEnd': '__reset'
     },
 
     properties: {
       /**
        * Displays the spinner.
-       *
-       * @attribute active
-       * @type boolean
-       * @default false
        */
       active: {
         type: Boolean,
         value: false,
         reflectToAttribute: true,
-        observer: '_activeChanged'
+        observer: '__activeChanged'
       },
 
       /**
        * Alternative text content for accessibility support.
        * If alt is present, it will add an aria-label whose content matches alt when active.
        * If alt is not present, it will default to 'loading' as the alt value.
-       *
-       * @attribute alt
-       * @type string
-       * @default 'loading'
        */
       alt: {
         type: String,
         value: 'loading',
-        observer: '_altChanged'
+        observer: '__altChanged'
       },
 
-      /**
-       * True when the spinner is going from active to inactive. This is represented by a fade
-       * to 0% opacity to the user.
-       */
-      _coolingDown: {
+      __coolingDown: {
         type: Boolean,
         value: false
       },
 
-      _spinnerContainerClassName: {
+      __spinnerContainerClassName: {
         type: String,
-        computed: '_computeSpinnerContainerClassName(active, _coolingDown)'
+        computed: '__computeSpinnerContainerClassName(active, __coolingDown)'
       }
     },
 
-    _computeSpinnerContainerClassName: function(active, coolingDown) {
+    __computeSpinnerContainerClassName: function(active, coolingDown) {
       return [
         active || coolingDown ? 'active' : '',
         coolingDown ? 'cooldown' : ''
       ].join(' ');
     },
 
-    _activeChanged: function(active, old) {
-      this._setAriaHidden(!active);
-      this._coolingDown = !active && old;
+    __activeChanged: function(active, old) {
+      this.__setAriaHidden(!active);
+      this.__coolingDown = !active && old;
     },
 
-    _altChanged: function(alt) {
+    __altChanged: function(alt) {
       // user-provided `aria-label` takes precedence over prototype default
       if (alt === this.getPropertyInfo('alt').value) {
         this.alt = this.getAttribute('aria-label') || alt;
       } else {
-        this._setAriaHidden(alt==='');
+        this.__setAriaHidden(alt==='');
         this.setAttribute('aria-label', alt);
       }
     },
 
-    _setAriaHidden: function(hidden) {
+    __setAriaHidden: function(hidden) {
       var attr = 'aria-hidden';
       if (hidden) {
         this.setAttribute(attr, 'true');
@@ -96,9 +84,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
     },
 
-    reset: function() {
+    __reset: function() {
       this.active = false;
-      this._coolingDown = false;
+      this.__coolingDown = false;
     }
   };
 </script>
