@@ -45,15 +45,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       __coolingDown: {
         type: Boolean,
         value: false
-      },
-
-      __spinnerContainerClassName: {
-        type: String,
-        computed: '__computeSpinnerContainerClassName(active, __coolingDown)'
       }
     },
 
-    __computeSpinnerContainerClassName: function(active, coolingDown) {
+    __computeContainerClasses: function(active, coolingDown) {
       return [
         active || coolingDown ? 'active' : '',
         coolingDown ? 'cooldown' : ''

@@ -50,7 +50,7 @@ Custom property | Description | Default
   <template>
     <style include="paper-spinner-styles"></style>
 
-    <div id="spinnerContainer" class-name="[[__spinnerContainerClassName]]">
+    <div id="spinnerContainer" class-name="[[__computeContainerClasses(active, __coolingDown)]]">
       <div class="spinner-layer">
         <div class="circle-clipper left">
           <div class="circle"></div>
