@@ -52,6 +52,7 @@ The following custom properties and mixins are available for styling:
 | `--paper-spinner-layer-2-color` | Color of the second spinner rotation | `--google-red-500` |
 | `--paper-spinner-layer-3-color` | Color of the third spinner rotation | `--google-yellow-500` |
 | `--paper-spinner-layer-4-color` | Color of the fourth spinner rotation | `--google-green-500` |
+| `--paper-spinner-stroke-width` | The width of the spinner stroke | 3px |
 
 
 
@@ -85,6 +86,7 @@ The following custom properties and mixins are available for styling:
 | Custom property | Description | Default |
 | --- | --- | --- |
 | `--paper-spinner-color` | Color of the spinner | `--google-blue-500` |
+| `--paper-spinner-stroke-width` | The width of the spinner stroke | 3px |
 
 
 
