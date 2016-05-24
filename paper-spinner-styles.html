@@ -25,15 +25,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
        *                                5 pointed star shape (it's 360/5 * 3).
        *                                For a 7 pointed star, we might do
        *                                360/7 * 3 = 154.286)
-       *      CONTAINERWIDTH = 28px
        *      SHRINK_TIME = 400ms
        */
 
       :host {
         display: inline-block;
         position: relative;
-        width: 28px; /* CONTAINERWIDTH */
-        height: 28px; /* CONTAINERWIDTH */
+        width: 28px;
+        height: 28px;
 
         /* 360 * ARCTIME / (ARCSTARTROT + (360-ARCSIZE)) */
         --paper-spinner-container-rotation-duration: 1568ms;
@@ -137,115 +136,95 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
 
       @-webkit-keyframes fill-unfill-rotate {
-        12.5% { -webkit-transform: rotate(135deg);  } /* 0.5 * ARCSIZE */
-        25%   { -webkit-transform: rotate(270deg);  } /* 1   * ARCSIZE */
-        37.5% { -webkit-transform: rotate(405deg);  } /* 1.5 * ARCSIZE */
-        50%   { -webkit-transform: rotate(540deg);  } /* 2   * ARCSIZE */
-        62.5% { -webkit-transform: rotate(675deg);  } /* 2.5 * ARCSIZE */
-        75%   { -webkit-transform: rotate(810deg);  } /* 3   * ARCSIZE */
-        87.5% { -webkit-transform: rotate(945deg);  } /* 3.5 * ARCSIZE */
-        to    { -webkit-transform: rotate(1080deg); } /* 4   * ARCSIZE */
+        12.5% { -webkit-transform: rotate(135deg) } /* 0.5 * ARCSIZE */
+        25%   { -webkit-transform: rotate(270deg) } /* 1   * ARCSIZE */
+        37.5% { -webkit-transform: rotate(405deg) } /* 1.5 * ARCSIZE */
+        50%   { -webkit-transform: rotate(540deg) } /* 2   * ARCSIZE */
+        62.5% { -webkit-transform: rotate(675deg) } /* 2.5 * ARCSIZE */
+        75%   { -webkit-transform: rotate(810deg) } /* 3   * ARCSIZE */
+        87.5% { -webkit-transform: rotate(945deg) } /* 3.5 * ARCSIZE */
+        to    { -webkit-transform: rotate(1080deg) } /* 4   * ARCSIZE */
       }
 
       @keyframes fill-unfill-rotate {
-        12.5% { transform: rotate(135deg);  } /* 0.5 * ARCSIZE */
-        25%   { transform: rotate(270deg);  } /* 1   * ARCSIZE */
-        37.5% { transform: rotate(405deg);  } /* 1.5 * ARCSIZE */
-        50%   { transform: rotate(540deg);  } /* 2   * ARCSIZE */
-        62.5% { transform: rotate(675deg);  } /* 2.5 * ARCSIZE */
-        75%   { transform: rotate(810deg);  } /* 3   * ARCSIZE */
-        87.5% { transform: rotate(945deg);  } /* 3.5 * ARCSIZE */
-        to    { transform: rotate(1080deg); } /* 4   * ARCSIZE */
+        12.5% { transform: rotate(135deg) } /* 0.5 * ARCSIZE */
+        25%   { transform: rotate(270deg) } /* 1   * ARCSIZE */
+        37.5% { transform: rotate(405deg) } /* 1.5 * ARCSIZE */
+        50%   { transform: rotate(540deg) } /* 2   * ARCSIZE */
+        62.5% { transform: rotate(675deg) } /* 2.5 * ARCSIZE */
+        75%   { transform: rotate(810deg) } /* 3   * ARCSIZE */
+        87.5% { transform: rotate(945deg) } /* 3.5 * ARCSIZE */
+        to    { transform: rotate(1080deg) } /* 4   * ARCSIZE */
       }
 
       @-webkit-keyframes layer-1-fade-in-out {
-        0% { opacity: 1; }
-        25% { opacity: 1; }
-        26% { opacity: 0; }
-        89% { opacity: 0; }
-        90% { opacity: 1; }
-        to { opacity: 1; }
+        0% { opacity: 1 }
+        25% { opacity: 1 }
+        26% { opacity: 0 }
+        89% { opacity: 0 }
+        90% { opacity: 1 }
+        to { opacity: 1 }
       }
 
       @keyframes layer-1-fade-in-out {
-        0% { opacity: 1; }
-        25% { opacity: 1; }
-        26% { opacity: 0; }
-        89% { opacity: 0; }
-        90% { opacity: 1; }
-        to { opacity: 1; }
+        0% { opacity: 1 }
+        25% { opacity: 1 }
+        26% { opacity: 0 }
+        89% { opacity: 0 }
+        90% { opacity: 1 }
+        to { opacity: 1 }
       }
 
       @-webkit-keyframes layer-2-fade-in-out {
-        0% { opacity: 0; }
-        15% { opacity: 0; }
-        25% { opacity: 1; }
-        50% { opacity: 1; }
-        51% { opacity: 0; }
-        to { opacity: 0; }
+        0% { opacity: 0 }
+        15% { opacity: 0 }
+        25% { opacity: 1 }
+        50% { opacity: 1 }
+        51% { opacity: 0 }
+        to { opacity: 0 }
       }
 
       @keyframes layer-2-fade-in-out {
-        0% { opacity: 0; }
-        15% { opacity: 0; }
-        25% { opacity: 1; }
-        50% { opacity: 1; }
-        51% { opacity: 0; }
-        to { opacity: 0; }
+        0% { opacity: 0 }
+        15% { opacity: 0 }
+        25% { opacity: 1 }
+        50% { opacity: 1 }
+        51% { opacity: 0 }
+        to { opacity: 0 }
       }
 
       @-webkit-keyframes layer-3-fade-in-out {
-        0% { opacity: 0; }
-        40% { opacity: 0; }
-        50% { opacity: 1; }
-        75% { opacity: 1; }
-        76% { opacity: 0; }
-        to { opacity: 0; }
+        0% { opacity: 0 }
+        40% { opacity: 0 }
+        50% { opacity: 1 }
+        75% { opacity: 1 }
+        76% { opacity: 0 }
+        to { opacity: 0 }
       }
 
       @keyframes layer-3-fade-in-out {
-        0% { opacity: 0; }
-        40% { opacity: 0; }
-        50% { opacity: 1; }
-        75% { opacity: 1; }
-        76% { opacity: 0; }
-        to { opacity: 0; }
+        0% { opacity: 0 }
+        40% { opacity: 0 }
+        50% { opacity: 1 }
+        75% { opacity: 1 }
+        76% { opacity: 0 }
+        to { opacity: 0 }
       }
 
       @-webkit-keyframes layer-4-fade-in-out {
-        0% { opacity: 0; }
-        65% { opacity: 0; }
-        75% { opacity: 1; }
-        90% { opacity: 1; }
-        to { opacity: 0; }
+        0% { opacity: 0 }
+        65% { opacity: 0 }
+        75% { opacity: 1 }
+        90% { opacity: 1 }
+        to { opacity: 0 }
       }
 
       @keyframes layer-4-fade-in-out {
-        0% { opacity: 0; }
-        65% { opacity: 0; }
-        75% { opacity: 1; }
-        90% { opacity: 1; }
-        to { opacity: 0; }
-      }
-
-      /**
-       * Patch the gap that appear between the two adjacent div.circle-clipper while the
-       * spinner is rotating (appears on Chrome 50, Safari 9.1.1, and Edge).
-       */
-      .gap-patch {
-        position: absolute;
-        box-sizing: border-box;
-        top: 0;
-        left: 45%;
-        width: 10%;
-        height: 100%;
-        overflow: hidden;
-        border-color: inherit;
-      }
-
-      .gap-patch .circle {
-        width: 1000%;
-        left: -450%;
+        0% { opacity: 0 }
+        65% { opacity: 0 }
+        75% { opacity: 1 }
+        90% { opacity: 1 }
+        to { opacity: 0 }
       }
 
       .circle-clipper {
@@ -257,38 +236,50 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         border-color: inherit;
       }
 
-      .circle-clipper .circle {
-        width: 200%;
+      /**
+       * Patch the gap that appear between the two adjacent div.circle-clipper while the
+       * spinner is rotating (appears on Chrome 50, Safari 9.1.1, and Edge).
+       */
+      .spinner-layer::after {
+        left: 45%;
+        width: 10%;
+        border-top-style: solid;
       }
 
-      .circle {
+      .spinner-layer::after,
+      .circle-clipper::after {
+        content: '';
         box-sizing: border-box;
-        height: 100%;
-        border-width: var(--paper-spinner-stroke-width, 3px); /* STROKEWIDTH */
-        border-style: solid;
+        position: absolute;
+        top: 0;
+        border-width: var(--paper-spinner-stroke-width, 3px);
         border-color: inherit;
-        border-bottom-color: transparent !important;
         border-radius: 50%;
-        -webkit-animation: none;
-        animation: none;
-
-        @apply(--layout-fit);
       }
 
-      .circle-clipper.left .circle {
+      .circle-clipper::after {
+        bottom: 0;
+        width: 200%;
+        border-style: solid;
+        border-bottom-color: transparent !important;
+      }
+
+      .circle-clipper.left::after {
+        left: 0;
         border-right-color: transparent !important;
         -webkit-transform: rotate(129deg);
         transform: rotate(129deg);
       }
 
-      .circle-clipper.right .circle {
+      .circle-clipper.right::after {
         left: -100%;
         border-left-color: transparent !important;
         -webkit-transform: rotate(-129deg);
         transform: rotate(-129deg);
       }
 
-      .active .circle {
+      .active .gap-patch::after,
+      .active .circle-clipper::after {
         -webkit-animation-duration: var(--paper-spinner-expand-contract-duration);
         -webkit-animation-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
         -webkit-animation-iteration-count: infinite;
@@ -297,38 +288,38 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         animation-iteration-count: infinite;
       }
 
-      .active .circle-clipper.left .circle {
+      .active .circle-clipper.left::after {
         -webkit-animation-name: left-spin;
         animation-name: left-spin;
       }
 
-      .active .circle-clipper.right .circle {
+      .active .circle-clipper.right::after {
         -webkit-animation-name: right-spin;
         animation-name: right-spin;
       }
 
       @-webkit-keyframes left-spin {
-        0% { -webkit-transform: rotate(130deg); }
-        50% { -webkit-transform: rotate(-5deg); }
-        to { -webkit-transform: rotate(130deg); }
+        0% { -webkit-transform: rotate(130deg) }
+        50% { -webkit-transform: rotate(-5deg) }
+        to { -webkit-transform: rotate(130deg) }
       }
 
       @keyframes left-spin {
-        0% { transform: rotate(130deg); }
-        50% { transform: rotate(-5deg); }
-        to { transform: rotate(130deg); }
+        0% { transform: rotate(130deg) }
+        50% { transform: rotate(-5deg) }
+        to { transform: rotate(130deg) }
       }
 
       @-webkit-keyframes right-spin {
-        0% { -webkit-transform: rotate(-130deg); }
-        50% { -webkit-transform: rotate(5deg); }
-        to { -webkit-transform: rotate(-130deg); }
+        0% { -webkit-transform: rotate(-130deg) }
+        50% { -webkit-transform: rotate(5deg) }
+        to { -webkit-transform: rotate(-130deg) }
       }
 
       @keyframes right-spin {
-        0% { transform: rotate(-130deg); }
-        50% { transform: rotate(5deg); }
-        to { transform: rotate(-130deg); }
+        0% { transform: rotate(-130deg) }
+        50% { transform: rotate(5deg) }
+        to { transform: rotate(-130deg) }
       }
 
       #spinnerContainer.cooldown {
@@ -337,13 +328,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
 
       @-webkit-keyframes fade-out {
-        0% { opacity: 1; }
-        to { opacity: 0; }
+        0% { opacity: 1 }
+        to { opacity: 0 }
       }
 
       @keyframes fade-out {
-        0% { opacity: 1; }
-        to { opacity: 0; }
+        0% { opacity: 1 }
+        to { opacity: 0 }
       }
     </style>
   </template>
