@@ -15,7 +15,7 @@ Element providing a multiple color material design circular spinner.
     <link rel="import" href="paper-spinner-lite.html">
     <style is="custom-style">
       paper-spinner, paper-spinner-lite {
-        margin-right: 8px;
+        margin: 8px 8px 8px 0;
       }
       paper-spinner-lite.orange {
         --paper-spinner-color: var(--google-yellow-500);
