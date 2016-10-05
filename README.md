@@ -29,8 +29,13 @@ Element providing a multiple color material design circular spinner.
       paper-spinner-lite.thick {
         --paper-spinner-stroke-width: 6px;
       }
+      #container {
+        display: flex;
+      }
     </style>
-    <next-code-block></next-code-block>
+    <div id="container">    
+      <next-code-block></next-code-block>
+    </div>
   </template>
 </custom-element-demo>
 ```
