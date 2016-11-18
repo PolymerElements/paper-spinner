@@ -25,15 +25,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   </head>
   <body>
 
-    <test-fixture id="PaperSpinner">
+    <test-fixture id="spinner">
       <template>
-        <paper-spinner></paper-spinner>
+        <paper-spinner active></paper-spinner>
       </template>
     </test-fixture>
 
-    <test-fixture id="ActivePaperSpinner">
+    <test-fixture id="spinnerWithLabel">
       <template>
-        <paper-spinner active></paper-spinner>
+        <paper-spinner active aria-label="busy"></paper-spinner>
       </template>
     </test-fixture>
 
@@ -44,11 +44,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         suite('an accessible paper spinner', function() {
           var spinner;
-          var activeSpinner;
 
           setup(function() {
-            spinner = fixture('PaperSpinner');
-            activeSpinner = fixture('ActivePaperSpinner');
+            spinner = fixture('spinner');
+          });
+
+          test('adds an ARIA label by default', function() {
+            expect(spinner.getAttribute('aria-label')).to.be.eql('loading');
           });
 
           test('adds an ARIA label when `alt` is supplied', function() {
@@ -63,16 +65,26 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             expect(spinner.getAttribute('aria-hidden')).to.be.eql('true');
           });
 
+          test('hides from ARIA when alt is empty', function() {
+            spinner.alt = '';
+            expect(spinner.getAttribute('aria-hidden')).to.be.eql('true');
+          });
+
+          test('user-provided `aria-label` takes precedence over default', function() {
+            var spinner = fixture('spinnerWithLabel');
+            expect(spinner.getAttribute('aria-label')).to.be.eql('busy');
+          });
+
           test('toggle during cooldown', function(done) {
-            activeSpinner.active = false;
+            spinner.active = false;
 
             // Set active to true before cooldown animation completes.
             setTimeout(function() {
-              activeSpinner.active = true;
+              spinner.active = true;
 
               // Wait for cooldown animation to complete.
               setTimeout(function() {
-                expect(activeSpinner.active).to.equal(true);
+                expect(spinner.active).to.equal(true);
                 done();
               }, 500);
             }, 100);

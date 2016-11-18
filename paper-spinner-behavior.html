@@ -38,8 +38,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
        */
       alt: {
         type: String,
-        value: 'loading',
-        observer: '__altChanged'
+        value: 'loading'
       },
 
       __coolingDown: {
@@ -47,6 +46,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         value: false
       }
     },
+
+    observers: [
+      '_setAriaLabels(active, alt)'
+    ],
 
     __computeContainerClasses: function(active, coolingDown) {
       return [
@@ -56,26 +59,21 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     },
 
     __activeChanged: function(active, old) {
-      this.__setAriaHidden(!active);
       this.__coolingDown = !active && old;
     },
 
-    __altChanged: function(alt) {
-      // user-provided `aria-label` takes precedence over prototype default
-      if (alt === this.getPropertyInfo('alt').value) {
-        this.alt = this.getAttribute('aria-label') || alt;
-      } else {
-        this.__setAriaHidden(alt==='');
-        this.setAttribute('aria-label', alt);
+    _setAriaLabels: function(active, alt) {
+      if (!active || alt === '') {
+        this.removeAttribute('aria-label');
+        this.setAttribute('aria-hidden', 'true');
+        return;
       }
-    },
 
-    __setAriaHidden: function(hidden) {
-      var attr = 'aria-hidden';
-      if (hidden) {
-        this.setAttribute(attr, 'true');
-      } else {
-        this.removeAttribute(attr);
+      this.removeAttribute('aria-hidden');
+
+      // user-provided `aria-label` takes precedence over prototype default
+      if (alt !== this.getPropertyInfo('alt').value || !this.getAttribute('aria-label')) {
+        this.setAttribute('aria-label', alt);
       }
     },
 
