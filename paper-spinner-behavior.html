@@ -47,7 +47,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       return [
         active || coolingDown ? 'active' : '',
         coolingDown ? 'cooldown' : ''
-      ].join(' ');
+      ].filter(c => !!c).join(' ');
     },
 
     __activeChanged: function(active, old) {
