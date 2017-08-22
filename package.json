@@ -1,0 +1,26 @@
+{
+  "name": "@polymer/paper-spinner",
+  "flat": true,
+  "version": "3.0.0-pre.1",
+  "description": "A material design spinner",
+  "contributors": [
+    "The Polymer Authors"
+  ],
+  "keywords": [
+    "web-components",
+    "polymer",
+    "spinner",
+    "loading"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/PolymerElements/paper-spinner"
+  },
+  "license": "http://polymer.github.io/LICENSE.txt",
+  "homepage": "https://github.com/PolymerElements/paper-spinner",
+  "dependencies": {
+    "@polymer/paper-styles": "^3.0.0-pre.1",
+    "@polymer/polymer": "^3.0.0-pre.1"
+  },
+  "devDependencies": {}
+}
