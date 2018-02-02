@@ -1,0 +1,10 @@
+{
+  "name": "@polymer/paper-spinner",
+  "private": true,
+  "description": "A material design spinner",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/PolymerElements/paper-spinner"
+  },
+  "license": "http://polymer.github.io/LICENSE.txt"
+}
