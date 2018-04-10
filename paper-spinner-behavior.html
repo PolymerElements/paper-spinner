@@ -11,7 +11,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../polymer/polymer.html">
 
 <script>
-
   /** @polymerBehavior */
   Polymer.PaperSpinnerBehavior = {
 
@@ -28,19 +27,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       /**
        * Alternative text content for accessibility support.
-       * If alt is present, it will add an aria-label whose content matches alt when active.
-       * If alt is not present, it will default to 'loading' as the alt value.
+       * If alt is present, it will add an aria-label whose content matches alt
+       * when active. If alt is not present, it will default to 'loading' as the
+       * alt value.
        */
-      alt: {
-        type: String,
-        value: 'loading',
-        observer: '__altChanged'
-      },
+      alt: {type: String, value: 'loading', observer: '__altChanged'},
 
-      __coolingDown: {
-        type: Boolean,
-        value: false
-      }
+      __coolingDown: {type: Boolean, value: false}
     },
 
     __computeContainerClasses: function(active, coolingDown) {
@@ -60,7 +53,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       if (alt === 'loading') {
         this.alt = this.getAttribute('aria-label') || alt;
       } else {
-        this.__setAriaHidden(alt==='');
+        this.__setAriaHidden(alt === '');
         this.setAttribute('aria-label', alt);
       }
     },
