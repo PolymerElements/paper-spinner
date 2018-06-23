@@ -15,12 +15,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <title>paper-spinner basic tests</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
-    <script src="../../web-component-tester/browser.js"></script>
+    <script src="../../../@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
+    <script src="../../../wct-browser-legacy/browser.js"></script>
     <script src="../../test-fixture/test-fixture-mocha.js"></script>
 
-    <link href="../../test-fixture/test-fixture.html" rel="import">
-    <link href="../paper-spinner.html" rel="import">
+    <script type="module" src="../../test-fixture/test-fixture.js"></script>
+    <script type="module" src="../paper-spinner.js"></script>
 
   </head>
   <body>
@@ -37,48 +37,49 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       </template>
     </test-fixture>
 
-    <script>
-      'use strict';
+    <script type="module">
+import '@polymer/test-fixture/test-fixture.js';
+import '../paper-spinner.js';
 
-      suite('<paper-spinner>', function() {
-        suite('an accessible paper spinner', function() {
-          var spinner;
-          var activeSpinner;
+suite('<paper-spinner>', function() {
+  suite('an accessible paper spinner', function() {
+    var spinner;
+    var activeSpinner;
 
-          setup(function() {
-            spinner = fixture('PaperSpinner');
-            activeSpinner = fixture('ActivePaperSpinner');
-          });
+    setup(function() {
+      spinner = fixture('PaperSpinner');
+      activeSpinner = fixture('ActivePaperSpinner');
+    });
 
-          test('adds an ARIA label when `alt` is supplied', function() {
-            var ALT_TEXT = 'Loading the next gif...';
+    test('adds an ARIA label when `alt` is supplied', function() {
+      var ALT_TEXT = 'Loading the next gif...';
 
-            spinner.alt = ALT_TEXT;
-            expect(spinner.getAttribute('aria-label')).to.be.eql(ALT_TEXT);
-          });
+      spinner.alt = ALT_TEXT;
+      expect(spinner.getAttribute('aria-label')).to.be.eql(ALT_TEXT);
+    });
 
-          test('hides from ARIA when inactive', function() {
-            spinner.active = false;
-            expect(spinner.getAttribute('aria-hidden')).to.be.eql('true');
-          });
+    test('hides from ARIA when inactive', function() {
+      spinner.active = false;
+      expect(spinner.getAttribute('aria-hidden')).to.be.eql('true');
+    });
 
-          test('toggle during cooldown', function(done) {
-            activeSpinner.active = false;
+    test('toggle during cooldown', function(done) {
+      activeSpinner.active = false;
 
-            // Set active to true before cooldown animation completes.
-            setTimeout(function() {
-              activeSpinner.active = true;
+      // Set active to true before cooldown animation completes.
+      setTimeout(function() {
+        activeSpinner.active = true;
 
-              // Wait for cooldown animation to complete.
-              setTimeout(function() {
-                expect(activeSpinner.active).to.equal(true);
-                done();
-              }, 500);
-            }, 100);
-          });
-        });
-      });
-    </script>
+        // Wait for cooldown animation to complete.
+        setTimeout(function() {
+          expect(activeSpinner.active).to.equal(true);
+          done();
+        }, 500);
+      }, 100);
+    });
+  });
+});
+</script>
 
   </body>
 </html>
