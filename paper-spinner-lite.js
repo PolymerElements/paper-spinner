@@ -13,28 +13,22 @@ import '@polymer/paper-styles/color.js';
 import './paper-spinner-styles.js';
 
 import {Polymer} from '@polymer/polymer/lib/legacy/polymer-fn.js';
+import {html} from '@polymer/polymer/lib/utils/html-tag.js';
 
 import {PaperSpinnerBehavior} from './paper-spinner-behavior.js';
 
-const $_documentContainer = document.createElement('template');
-$_documentContainer.setAttribute('style', 'display: none;');
+const template = html`
+  <style include="paper-spinner-styles"></style>
 
-$_documentContainer.innerHTML = `<dom-module id="paper-spinner-lite">
-  <template strip-whitespace="">
-    <style include="paper-spinner-styles"></style>
-
-    <div id="spinnerContainer" class-name="[[__computeContainerClasses(active, __coolingDown)]]" on-animationend="__reset" on-webkit-animation-end="__reset">
-      <div class="spinner-layer">
-        <div class="circle-clipper left"></div>
-        <div class="circle-clipper right"></div>
-      </div>
+  <div id="spinnerContainer" class-name="[[__computeContainerClasses(active, __coolingDown)]]" on-animationend="__reset" on-webkit-animation-end="__reset">
+    <div class="spinner-layer">
+      <div class="circle-clipper left"></div>
+      <div class="circle-clipper right"></div>
     </div>
-  </template>
+  </div>
+`;
+template.setAttribute('strip-whitespace', '');
 
-  
-</dom-module>`;
-
-document.head.appendChild($_documentContainer.content);
 /**
 Material design: [Progress &
 activity](https://www.google.com/design/spec/components/progress-activity.html)
@@ -69,6 +63,8 @@ Custom property | Description | Default
 @demo demo/index.html
 */
 Polymer({
+  _template: template,
+
   is: 'paper-spinner-lite',
 
   behaviors: [PaperSpinnerBehavior]
