@@ -1,50 +1,67 @@
+[![Published on NPM](https://img.shields.io/npm/v/@polymer/paper-spinner.svg)](https://www.npmjs.com/package/@polymer/paper-spinner)
 [![Build status](https://travis-ci.org/PolymerElements/paper-spinner.svg?branch=master)](https://travis-ci.org/PolymerElements/paper-spinner)
-[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/PolymerElements/paper-spinner)
+[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://webcomponents.org/element/@polymer/paper-spinner)
 
 ## &lt;paper-spinner&gt;
-
-Material design: [Progress & activity](https://www.google.com/design/spec/components/progress-activity.html)
-
 Element providing a multiple color material design circular spinner.
 
-<!---
+See: [Documentation](https://www.webcomponents.org/element/@polymer/paper-spinner),
+  [Demo](https://www.webcomponents.org/element/@polymer/paper-spinner/demo/demo/index.html).
+
+## Usage
+
+### Installation
 ```
-<custom-element-demo>
-  <template>
-    <script src="../webcomponentsjs/webcomponents-lite.js"></script>
-    <link rel="import" href="paper-spinner.html">
-    <link rel="import" href="paper-spinner-lite.html">
-    <style is="custom-style">
-      paper-spinner, paper-spinner-lite {
-        margin: 8px 8px 8px 0;
-      }
-      paper-spinner-lite.orange {
-        --paper-spinner-color: var(--google-yellow-500);
-      }
-      paper-spinner-lite.green {
-        --paper-spinner-color: var(--google-green-500);
-      }
-      paper-spinner-lite.thin {
-        --paper-spinner-stroke-width: 1px;
-      }
-      paper-spinner-lite.thick {
-        --paper-spinner-stroke-width: 6px;
-      }
-      #container {
-        display: flex;
-      }
-    </style>
-    <div id="container">    
-      <next-code-block></next-code-block>
-    </div>
-  </template>
-</custom-element-demo>
+npm install --save @polymer/paper-spinner
 ```
--->
+
+### In an html file
 ```html
-<paper-spinner active>...</paper-spinner>
-<paper-spinner-lite active class="orange"></paper-spinner-lite>
-<paper-spinner-lite active class="green"></paper-spinner-lite>
-<paper-spinner-lite active class="thin"></paper-spinner-lite>
-<paper-spinner-lite active class="thick"></paper-spinner-lite>
+<html>
+  <head>
+    <script type="module">
+      import '@polymer/paper-spinner/paper-spinner.js';
+    </script>
+  </head>
+  <body>
+    <paper-spinner active></paper-spinner>
+  </body>
+</html>
+```
+### In a Polymer 3 element
+```js
+import {PolymerElement, html} from '@polymer/polymer';
+import '@polymer/paper-spinner/paper-spinner.js';
+
+class SampleElement extends PolymerElement {
+  static get template() {
+    return html`
+      <paper-spinner active></paper-spinner>
+    `;
+  }
+}
+customElements.define('sample-element', SampleElement);
+```
+
+## Contributing
+If you want to send a PR to this element, here are
+the instructions for running the tests and demo locally:
+
+### Installation
+```sh
+git clone https://github.com/PolymerElements/paper-spinner
+cd paper-spinner
+npm install
+npm install -g polymer-cli
+```
+
+### Running the demo locally
+```sh
+polymer serve --npm
+open http://127.0.0.1:<port>/demo/
+```
+
+### Running the tests
+```sh
+polymer test --npm
 ```
