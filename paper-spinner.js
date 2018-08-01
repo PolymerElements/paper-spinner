@@ -71,14 +71,10 @@ The following custom properties and mixins are available for styling:
 
 Custom property | Description | Default
 ----------------|-------------|----------
-`--paper-spinner-layer-1-color` | Color of the first spinner rotation |
-`--google-blue-500`
-`--paper-spinner-layer-2-color` | Color of the second spinner rotation |
-`--google-red-500`
-`--paper-spinner-layer-3-color` | Color of the third spinner rotation |
-`--google-yellow-500`
-`--paper-spinner-layer-4-color` | Color of the fourth spinner rotation |
-`--google-green-500`
+`--paper-spinner-layer-1-color` | Color of the first spinner rotation | `--google-blue-500`
+`--paper-spinner-layer-2-color` | Color of the second spinner rotation | `--google-red-500`
+`--paper-spinner-layer-3-color` | Color of the third spinner rotation | `--google-yellow-500`
+`--paper-spinner-layer-4-color` | Color of the fourth spinner rotation | `--google-green-500`
 `--paper-spinner-stroke-width` | The width of the spinner stroke | 3px
 
 @group Paper Elements
