@@ -28,7 +28,7 @@
   "version": "3.0.0-pre.26",
   "author": "The Polymer Authors",
   "dependencies": {
-    "@polymer/paper-styles": "^3.0.0-pre.25",
+    "@polymer/paper-styles": "^3.0.0-pre.26",
     "@polymer/polymer": "^3.0.0"
   }
 }
