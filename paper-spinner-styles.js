@@ -38,16 +38,16 @@ $_documentContainer.innerHTML = `<dom-module id="paper-spinner-styles">
         height: 28px;
 
         /* 360 * ARCTIME / (ARCSTARTROT + (360-ARCSIZE)) */
-        --paper-spinner-container-rotation-duration: 1568ms;
+        --paper-spinner-container-rotation-duration: var(--paper-spinner-container-rotation-duration, 1568ms);
 
         /* ARCTIME */
-        --paper-spinner-expand-contract-duration: 1333ms;
+        --paper-spinner-expand-contract-duration: var(--paper-spinner-expand-contract-duration, 1333ms);
 
         /* 4 * ARCTIME */
-        --paper-spinner-full-cycle-duration: 5332ms;
+        --paper-spinner-full-cycle-duration: var(--paper-spinner-full-cycle-duration, 5332ms);
 
         /* SHRINK_TIME */
-        --paper-spinner-cooldown-duration: 400ms;
+        --paper-spinner-cooldown-duration: var(--paper-spinner-cooldown-duration, 400ms);
       }
 
       #spinnerContainer {
