@@ -342,3 +342,5 @@ $_documentContainer.innerHTML = `<dom-module id="paper-spinner-styles">
 </dom-module>`;
 
 document.head.appendChild($_documentContainer.content);
+
+export {};
