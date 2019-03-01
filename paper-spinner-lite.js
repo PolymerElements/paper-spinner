@@ -17,22 +17,6 @@ import {html} from '@polymer/polymer/lib/utils/html-tag.js';
 
 import {PaperSpinnerBehavior} from './paper-spinner-behavior.js';
 
-const template = html`
-  <style include="paper-spinner-styles"></style>
-
-  <div id="spinnerContainer" class-name="[[__computeContainerClasses(active, __coolingDown)]]" on-animationend="__reset" on-webkit-animation-end="__reset">
-    <div class="spinner-layer">
-      <div class="circle-clipper left">
-        <div class="circle"></div>
-      </div>
-      <div class="circle-clipper right">
-        <div class="circle"></div>
-      </div>
-    </div>
-  </div>
-`;
-template.setAttribute('strip-whitespace', '');
-
 /**
 Material design: [Progress &
 activity](https://www.google.com/design/spec/components/progress-activity.html)
@@ -67,9 +51,26 @@ Custom property | Description | Default
 @demo demo/index.html
 */
 Polymer({
-  _template: template,
+  _template: html`
+    <style include="paper-spinner-styles"></style>
+
+    <div id="spinnerContainer" class-name="[[__computeContainerClasses(active, __coolingDown)]]" on-animationend="__reset" on-webkit-animation-end="__reset">
+      <div class="spinner-layer">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div>
+        <div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+    </div>
+  `,
 
   is: 'paper-spinner-lite',
 
-  behaviors: [PaperSpinnerBehavior]
+  behaviors: [PaperSpinnerBehavior],
+
+  registered() {
+    this._template.setAttribute('strip-whitespace', '');
+  }
 });
