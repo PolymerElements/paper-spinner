@@ -45,12 +45,11 @@ Custom property | Description | Default
 `--paper-spinner-color` | Color of the spinner | `--google-blue-500`
 `--paper-spinner-stroke-width` | The width of the spinner stroke | 3px
 
-@group Paper Elements
 @element paper-spinner-lite
-@hero hero.svg
 @demo demo/index.html
 */
 Polymer({
+  /** @override */
   _template: html`
     <style include="paper-spinner-styles"></style>
 
@@ -70,6 +69,7 @@ Polymer({
 
   behaviors: [PaperSpinnerBehavior],
 
+  /** @override */
   registered() {
     this._template.setAttribute('strip-whitespace', '');
   }
